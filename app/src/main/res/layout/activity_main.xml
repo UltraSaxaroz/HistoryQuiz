@@ -1,0 +1,188 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGray"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        android:background="@color/semiTransparent"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="90dp"
+            android:gravity="left">
+
+            <TextView
+                android:id="@+id/instab"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="AncientQuizz"
+                android:textAlignment="center"
+                android:textColor="@color/niceWhite"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            >
+
+
+            <com.google.android.material.button.MaterialButton
+                app:cornerRadius="15dp"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Contact"
+                tools:ignore="RtlCompat"
+                android:fontFamily="@font/jfsgjsfg"
+                android:textColor="@color/backgroundGray"
+                android:backgroundTint="@color/niceWhite"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/rgbline"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="ExtraText">
+
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/insta"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Log in"
+                android:textAlignment="center"
+                android:textColor="@color/niceWhite"
+                android:textSize="20dp"
+                android:fontFamily="@font/jfsgjsfg"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="E-Mail:"
+                    android:textColor="@color/niceWhite"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat"/>
+
+
+                <EditText
+                    android:inputType="textEmailAddress"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/niceWhite"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    android:drawableRight="@drawable/ic_baseline_email_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/niceWhite"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Password:"
+                    android:textColor="@color/niceWhite"
+                    android:textSize="17dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textEmailAddress"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/niceWhite"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword"
+                    android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Submit"
+            app:cornerRadius="15dp"
+            android:textColor="@color/niceWhite"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat"
+            android:backgroundTint="@color/backgroundGray"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Forgot your password?"
+            android:textColor="@color/text_color"
+            android:id="@+id/button4"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"
+            android:backgroundTint="@color/semiTransparent"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
