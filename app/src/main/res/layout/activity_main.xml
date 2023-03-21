@@ -6,26 +6,29 @@
     android:background="@color/backgroundGray"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        tools:ignore="MissingConstraints"
-        android:orientation="horizontal"
         android:background="@color/semiTransparent"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="90dp"
+            android:layout_centerInParent="true"
             android:gravity="left">
-
+            <!-- android:layout_marginRight="95dp" -->
             <TextView
                 android:id="@+id/instab"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -33,31 +36,33 @@
                 android:textAlignment="center"
                 android:textColor="@color/niceWhite"
                 android:textSize="20dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="end"
-            >
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true">
 
 
             <com.google.android.material.button.MaterialButton
-                app:cornerRadius="15dp"
                 android:layout_width="wrap_content"
-                android:textAlignment="center"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/niceWhite"
+                android:fontFamily="@font/jfsgjsfg"
                 android:gravity="center"
                 android:text="Contact"
-                tools:ignore="RtlCompat"
-                android:fontFamily="@font/jfsgjsfg"
+                android:textAlignment="center"
                 android:textColor="@color/backgroundGray"
-                android:backgroundTint="@color/niceWhite"
-                />
+                app:cornerRadius="15dp"
+                tools:ignore="RtlCompat" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
     <TextView
         android:id="@+id/rgbline"
         android:layout_width="match_parent"
@@ -124,6 +129,7 @@
                     android:textColor="@color/niceWhite"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/montserrat"
+                    android:id="@+id/mail"
                     android:drawableRight="@drawable/ic_baseline_email_24"/>
             </LinearLayout>
 
@@ -150,6 +156,7 @@
                     android:layout_gravity="center"
                     android:textColor="@color/niceWhite"
                     android:backgroundTint="@color/white"
+                    android:id="@+id/password"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword"
                     android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
@@ -160,7 +167,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
+            android:id="@+id/auth"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

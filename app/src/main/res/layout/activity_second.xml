@@ -129,6 +129,7 @@
                     android:drawableRight="@drawable/ic_baseline_email_24"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textEmailAddress"
+                    android:id="@+id/mail"
                     android:textColor="@color/niceWhite" />
             </LinearLayout>
 
@@ -156,7 +157,8 @@
                     android:drawableRight="@drawable/ic_baseline_person_24"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPersonName"
-                    android:textColor="@color/niceWhite" />
+                    android:textColor="@color/niceWhite"
+                    android:id="@+id/name"/>
             </LinearLayout>
 
             <LinearLayout
@@ -184,7 +186,8 @@
                     android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword"
-                    android:textColor="@color/niceWhite" />
+                    android:textColor="@color/niceWhite"
+                    android:id="@+id/password"/>
 
             </LinearLayout>
 
@@ -213,14 +216,15 @@
                     android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword"
-                    android:textColor="@color/niceWhite" />
+                    android:textColor="@color/niceWhite"
+                    android:id="@+id/repeatpassword"/>
 
             </LinearLayout>
         </LinearLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
+            android:id="@+id/auth"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -229,7 +233,8 @@
             android:text="Submit"
             android:textAlignment="center"
             android:textColor="@color/niceWhite"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="15dp"
+            />
 
         <Button
             android:id="@+id/go_back"
