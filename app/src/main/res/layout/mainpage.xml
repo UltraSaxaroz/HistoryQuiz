@@ -92,38 +92,49 @@
             android:textSize="25dp"
             android:fontFamily="@font/montserrat"
             android:text="HistoryQuiz"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
             android:text="About"
             android:backgroundTint="@color/backgroundGray"
             android:textAllCaps="false"
             android:textSize="17dp"
+            android:textColor="@color/niceWhite"
             android:fontFamily="@font/montserrat"/>
         <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
             android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:textColor="@color/niceWhite"
             android:backgroundTint="@color/backgroundGray"
             android:fontFamily="@font/montserrat"
             android:textSize="17dp"
             android:text="start game"/>
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/niceWhite"
             android:fontFamily="@font/montserrat"
             android:textAllCaps="false"
             android:textSize="17dp"
             android:backgroundTint="@color/backgroundGray"
             android:text="Profile"/>
         <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/niceWhite"
             android:backgroundTint="@color/backgroundGray"
             android:fontFamily="@font/montserrat"
             android:textSize="17dp"
             android:text="log out"/>
-
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

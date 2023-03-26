@@ -29,8 +29,8 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
-
-        TextView textView = (TextView) findViewById(R.id.insta);
+/*
+       TextView textView = (TextView) findViewById(R.id.insta);
         TextView textViewb = (TextView) findViewById(R.id.instab);
         TextView textViewc = (TextView) findViewById(R.id.rgbline);
         //textView.setText("Log in".toUpperCase());
@@ -61,5 +61,6 @@ public class MainPage extends AppCompatActivity {
         textViewb.getPaint().setShader(textShader2);
         textViewc.getPaint().setShader(textShader);
         textView.getPaint().setShader(textShader);
+    */
     }
 }
