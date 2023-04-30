@@ -119,6 +119,7 @@
         android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
             android:layout_width="150dp"
+            android:id="@+id/profileBtn"
             android:layout_height="120dp"
             android:textColor="@color/niceWhite"
             android:fontFamily="@font/montserrat"

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePage"
+    android:background="@color/niceWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/semiTransparent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_centerInParent="true"
+        android:gravity="left">
+        <!-- android:layout_marginRight="95dp" -->
+        <TextView
+            android:id="@+id/instab"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="AncientQuizz"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundGray"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:gravity="end">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/niceWhite"
+                android:fontFamily="@font/jfsgjsfg"
+                android:gravity="center"
+                android:text="Contact"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundGray"
+                app:cornerRadius="15dp"
+                tools:ignore="RtlCompat" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
