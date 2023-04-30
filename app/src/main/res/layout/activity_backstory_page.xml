@@ -4,6 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".backstoryPage">
+    tools:context=".MainPage"
+    >
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="top"
+        android:background="@color/niceWhite"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            >
+            <!-- android:layout_marginRight="95dp" -->
+            <TextView
+                android:id="@+id/instab"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Timeless-Trivia"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundGray"
+                android:textFontWeight="800"
+                android:textSize="20dp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingConstraints">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@mipmap/ww1_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="93dp">
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WW1"
+            android:textFontWeight="800"
+            android:fontFamily="@font/jfsgjsfg"
+            android:textSize="24dp"
+            android:textColor="@color/backgroundGray"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/WW1_intro"
+            android:textFontWeight="800"
+            android:fontFamily="@font/jfsgjsfg"
+            android:textSize="24dp"
+            android:textColor="@color/backgroundGray"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
