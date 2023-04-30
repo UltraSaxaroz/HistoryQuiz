@@ -46,7 +46,14 @@ public class MainPage extends AppCompatActivity {
                                    public void onClick(View view) {
                                        startActivity(new Intent(MainPage.this, ProfilePage.class));
                                    }
-                               })
+                               });
+        final Button btn2 = findViewById(R.id.backstoryPage);
+        btn2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainPage.this, backstoryPage.class));
+            }
+        });
 
 /*
        TextView textView = (TextView) findViewById(R.id.insta);

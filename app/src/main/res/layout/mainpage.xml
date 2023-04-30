@@ -7,6 +7,7 @@
     tools:context=".MainPage">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -20,11 +21,10 @@
 
         <RelativeLayout
             android:layout_width="150dp"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
-            android:gravity="left">
+            android:layout_marginLeft="15dp"
+            android:gravity="center">
             <!-- android:layout_marginRight="95dp" -->
             <TextView
                 android:id="@+id/instab"
@@ -32,34 +32,13 @@
                 android:layout_height="52dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:text="AncientQuizz"
+                android:text="Timeless-Trivia"
                 android:textAlignment="center"
                 android:textColor="@color/niceWhite"
+                android:textFontWeight="800"
                 android:textSize="20dp" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="end"
-            android:layout_marginRight="15dp"
-            android:layout_alignParentRight="true">
-
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/niceWhite"
-                android:fontFamily="@font/jfsgjsfg"
-                android:gravity="center"
-                android:text="Contact"
-                android:textAlignment="center"
-                android:textColor="@color/backgroundGray"
-                app:cornerRadius="15dp"
-                tools:ignore="RtlCompat" />
-
-        </RelativeLayout>
 
     </RelativeLayout>
     <TextView
@@ -72,8 +51,10 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
+        android:paddingTop="0dp"
         app:flow_verticalAlign="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,60 +62,73 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        tools:ignore="ExtraText"
-        android:gravity="center">
+        tools:ignore="ExtraText">
 
-        <TextView
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:textColor="@color/niceWhite"-->
+        <!--            android:gravity="center"-->
+        <!--            android:textFontWeight="800"-->
+        <!--            android:textSize="25dp"-->
+        <!--            android:fontFamily="@font/montserrat"-->
+        <!--            android:text=""/>-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/niceWhite"
             android:gravity="center"
-            android:textSize="25dp"
-            android:fontFamily="@font/montserrat"
-            android:text="HistoryQuiz"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:text="About"
-            android:backgroundTint="@color/backgroundGray"
-            android:textAllCaps="false"
-            android:textSize="17dp"
-            android:textColor="@color/niceWhite"
-            android:fontFamily="@font/montserrat"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:textAllCaps="false"
-            android:textColor="@color/niceWhite"
-            android:backgroundTint="@color/backgroundGray"
-            android:fontFamily="@font/montserrat"
-            android:textSize="17dp"
-            android:text="start game"/>
-        </LinearLayout>
-        <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:id="@+id/profileBtn"
-            android:layout_height="120dp"
-            android:textColor="@color/niceWhite"
-            android:fontFamily="@font/montserrat"
-            android:textAllCaps="false"
-            android:textSize="17dp"
-            android:backgroundTint="@color/backgroundGray"
-            android:text="Profile"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:textColor="@color/niceWhite"
-            android:backgroundTint="@color/backgroundGray"
-            android:fontFamily="@font/montserrat"
-            android:textSize="17dp"
-            android:text="log out"/>
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:backgroundTint="#FFEB3B"
+                android:fontFamily="@font/montserrat"
+                android:text="About us"
+                android:textAllCaps="false"
+                android:textColor="@color/backgroundGray"
+                android:textFontWeight="800"
+                android:textSize="17dp"
+                app:cornerRadius="30dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/niceWhite"
+                android:fontFamily="@font/montserrat"
+                android:text="Backstory"
+                android:id="@+id/backstoryPage"
+                android:textAllCaps="false"
+                android:textColor="@color/backgroundGray"
+                android:textFontWeight="800"
+                android:textSize="17dp"
+                app:cornerRadius="30dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:backgroundTint="#2196F3"
+                android:fontFamily="@font/montserrat"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:textColor="#1D1D1D"
+                android:textFontWeight="800"
+                android:textSize="20dp"
+                app:cornerRadius="30dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/niceWhite"
+                android:fontFamily="@font/montserrat"
+                android:text="Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/backgroundGray"
+                android:textFontWeight="800"
+                android:textSize="17dp"
+                app:cornerRadius="30dp" />
+
         </LinearLayout>
 
     </LinearLayout>
