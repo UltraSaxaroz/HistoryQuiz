@@ -147,7 +147,6 @@
         android:backgroundTint="@color/gold"
         android:textColor="@color/backgroundGray"
         android:textStyle="bold"
-        android:cornerRadius="30dp"
         android:text="Submit"
         android:layout_below="@+id/choices_layout"
         android:layout_marginTop="20dp"/>
