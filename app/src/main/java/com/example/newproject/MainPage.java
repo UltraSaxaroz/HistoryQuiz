@@ -54,6 +54,13 @@ public class MainPage extends AppCompatActivity {
                 startActivity(new Intent(MainPage.this, backstoryPage.class));
             }
         });
+        final Button btn3 = findViewById(R.id.startButton);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainPage.this, MainGame.class));
+            }
+        });
 
 /*
        TextView textView = (TextView) findViewById(R.id.insta);

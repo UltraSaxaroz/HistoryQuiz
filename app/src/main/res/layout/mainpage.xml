@@ -107,6 +107,7 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
+                android:id="@+id/startButton"
                 android:backgroundTint="#2196F3"
                 android:fontFamily="@font/montserrat"
                 android:text="Start"
