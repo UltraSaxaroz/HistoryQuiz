@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundGray"
-    tools:context=".second_activity">
+    tools:context=".second_activity"
+    android:padding="24dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
