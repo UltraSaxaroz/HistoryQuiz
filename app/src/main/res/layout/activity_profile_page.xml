@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfilePage"
-    android:background="@color/niceWhite">
+    android:background="@color/niceWhite"
+    android:padding="24dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
