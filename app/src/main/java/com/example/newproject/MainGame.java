@@ -2,6 +2,8 @@ package com.example.newproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -58,11 +60,12 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
 
         Button clickedButton = (Button) view;
         if(clickedButton.getId()==R.id.submit_btn){
-            currentQuestionIndex++;
-            loadNewQuestion();
             if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
                 score++;
             }
+            currentQuestionIndex++;
+            loadNewQuestion();
+
         }else{
             selectedAnswer = clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.MAGENTA);
@@ -73,6 +76,11 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
 
     void loadNewQuestion(){
 
+        if(currentQuestionIndex == totalQuestion) {
+            finishQuiz();
+            return;
+        }
+
         questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
         ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
@@ -80,5 +88,29 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
         ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
 
     }
+    void finishQuiz(){
+        String passStatus = "";
+        if(score > totalQuestion * 0.60){
+            passStatus = "Passed";
+        }else{
+            passStatus = "Failed";
+        }
 
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage("Score is "+ score +"out of "+totalQuestion)
+                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
+                .setNegativeButton("Home", (dialogInterface, i) -> goHome())
+                .setCancelable(false)
+                .show();
+    }
+
+    void restartQuiz(){
+        score = 0;
+        currentQuestionIndex = 0;
+        loadNewQuestion();
+    }
+    void goHome(){
+        startActivity(new Intent(MainGame.this, MainPage.class));
+    }
 }
