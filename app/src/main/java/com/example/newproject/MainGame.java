@@ -2,6 +2,7 @@ package com.example.newproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,24 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+
+        Button clickedButton = (Button) view;
+        if(clickedButton.getId()==R.id.submit_btn){
+            currentQuestionIndex++;
+            loadNewQuestion();
+            if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
+                score++;
+            }
+        }else{
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.MAGENTA);
+
+
+        }
     }
 
     void loadNewQuestion(){
