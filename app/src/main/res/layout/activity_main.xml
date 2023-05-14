@@ -13,6 +13,7 @@
         android:layout_gravity="top"
         android:background="@color/semiTransparent"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,14 +27,15 @@
             android:layout_marginLeft="15dp"
             android:layout_centerInParent="true"
             android:gravity="center_horizontal">
+
             <!-- android:layout_marginRight="95dp" -->
+
             <TextView
-                android:id="@+id/instab"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:text="AncientQuizz"
+                android:text="Timeless-Trivia"
                 android:textAlignment="center"
                 android:textColor="@color/niceWhite"
                 android:textSize="20dp" />
@@ -143,11 +145,18 @@
             </LinearLayout>
         </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawableLeft="@mipmap/backgroundfluid"
+    android:orientation="vertical"
+    android:gravity="center"
 
+    >
         <com.google.android.material.button.MaterialButton
             android:id="@+id/auth"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_gravity="center"
             android:text="Submit"
             app:cornerRadius="15dp"
@@ -155,7 +164,22 @@
             android:textAlignment="center"
             android:fontFamily="@font/montserrat"
             android:backgroundTint="@color/backgroundGray"
+            android:drawableLeft="@mipmap/backgroundfluid"
             />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/guestMode"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:text="Guest"
+        app:cornerRadius="15dp"
+        android:textColor="@color/niceWhite"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:backgroundTint="@color/backgroundGray"
+        android:drawableLeft="@mipmap/backgroundfluid"
+        />
+</LinearLayout>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

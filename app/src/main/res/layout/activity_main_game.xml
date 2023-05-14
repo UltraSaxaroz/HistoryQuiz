@@ -104,11 +104,13 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/niceWhite"
             android:text="Ans A"
+            android:height="75dp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/backgroundGray"
             />
         <Button
             android:id="@+id/ans_B"
+            android:height="75dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -119,6 +121,7 @@
             />
         <Button
             android:id="@+id/ans_C"
+            android:height="75dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -129,6 +132,7 @@
             />
         <Button
             android:id="@+id/ans_D"
+            android:height="75dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

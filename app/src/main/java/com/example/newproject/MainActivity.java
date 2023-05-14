@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView textView = (TextView) findViewById(R.id.insta);
-        TextView textViewb = (TextView) findViewById(R.id.instab);
+        /*TextView textViewb = (TextView) findViewById(R.id.instab);*/
         TextView textViewc = (TextView) findViewById(R.id.rgbline);
         //textView.setText("Log in".toUpperCase());
 
@@ -156,11 +156,18 @@ public class MainActivity extends AppCompatActivity {
                         Color.parseColor("#44ce7b"),
                 }, null, Shader.TileMode.CLAMP);
 
-        textViewb.getPaint().setShader(textShader2);
+        /*textViewb.getPaint().setShader(textShader2);*/
         textViewc.getPaint().setShader(textShader);
         textView.getPaint().setShader(textShader);
 
-
+        final Button guest;
+        guest = findViewById(R.id.guestMode);
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainPage.class));
+            }
+        });
     }
 }
 
