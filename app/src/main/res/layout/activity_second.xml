@@ -221,7 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/semiTransparent"
-            android:text="Return to the main page"
+            android:text="Already have an account?"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/text_color" />

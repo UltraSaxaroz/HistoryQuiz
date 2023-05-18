@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundGray"
     tools:context=".MainPage"
-    android:padding="12dp">
+    android:padding="24dp">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -53,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="35dp"
         android:orientation="vertical"
         android:padding="16dp"
         android:paddingTop="0dp"
@@ -80,12 +81,13 @@
             android:gravity="center"
             android:orientation="vertical">
 
+
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="#FFEB3B"
+                android:backgroundTint="@color/gold"
                 android:fontFamily="@font/montserrat"
-                android:text="About us"
+                android:text="Об игре"
                 android:textAllCaps="false"
                 android:textColor="@color/backgroundGray"
                 android:textFontWeight="800"
@@ -97,7 +99,7 @@
                 android:layout_height="160dp"
                 android:backgroundTint="@color/niceWhite"
                 android:fontFamily="@font/montserrat"
-                android:text="Backstory"
+                android:text="Предыстория"
                 android:id="@+id/backstoryPage"
                 android:textAllCaps="false"
                 android:textColor="@color/backgroundGray"
@@ -111,7 +113,7 @@
                 android:id="@+id/startButton"
                 android:backgroundTint="#2196F3"
                 android:fontFamily="@font/montserrat"
-                android:text="Start"
+                android:text="Начать игру"
                 android:textAllCaps="false"
                 android:textColor="#1D1D1D"
                 android:textFontWeight="800"
@@ -124,7 +126,7 @@
                 android:layout_height="160dp"
                 android:backgroundTint="@color/niceWhite"
                 android:fontFamily="@font/montserrat"
-                android:text="Profile"
+                android:text="Профиль"
                 android:textAllCaps="false"
                 android:textColor="@color/backgroundGray"
                 android:textFontWeight="800"
