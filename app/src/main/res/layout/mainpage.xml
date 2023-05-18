@@ -85,38 +85,38 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="@color/gold"
+                android:backgroundTint="#982424"
                 android:fontFamily="@font/montserrat"
                 android:text="Об игре"
                 android:textAllCaps="false"
-                android:textColor="@color/backgroundGray"
-                android:textFontWeight="800"
+                android:textColor="#FFFDFA"
+                android:textFontWeight="400"
                 android:textSize="17dp"
                 app:cornerRadius="30dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/backstoryPage"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="@color/niceWhite"
+                android:backgroundTint="#EDDCC4"
                 android:fontFamily="@font/montserrat"
                 android:text="Предыстория"
-                android:id="@+id/backstoryPage"
                 android:textAllCaps="false"
                 android:textColor="@color/backgroundGray"
-                android:textFontWeight="800"
+                android:textFontWeight="700"
                 android:textSize="17dp"
                 app:cornerRadius="30dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/startButton"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:id="@+id/startButton"
-                android:backgroundTint="#2196F3"
-                android:fontFamily="@font/montserrat"
+                android:backgroundTint="#560E0D0D"
+                android:fontFamily="@font/jfsgjsfg"
                 android:text="Начать игру"
                 android:textAllCaps="false"
-                android:textColor="#1D1D1D"
-                android:textFontWeight="800"
+                android:textColor="#ECD4D4"
+                android:textFontWeight="400"
                 android:textSize="20dp"
                 app:cornerRadius="30dp" />
 
@@ -124,12 +124,12 @@
                 android:id="@+id/profileBtn"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="@color/niceWhite"
+                android:backgroundTint="#F3DFC3"
                 android:fontFamily="@font/montserrat"
                 android:text="Профиль"
                 android:textAllCaps="false"
                 android:textColor="@color/backgroundGray"
-                android:textFontWeight="800"
+                android:textFontWeight="700"
                 android:textSize="17dp"
                 app:cornerRadius="30dp" />
 
