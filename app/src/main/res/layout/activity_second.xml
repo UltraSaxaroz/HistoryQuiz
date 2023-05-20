@@ -109,6 +109,7 @@
                     android:fontFamily="@font/montserrat"
                     android:inputType="textEmailAddress"
                     android:id="@+id/mail"
+                    android:layout_below="@+id/mail"
                     android:textColor="@color/niceWhite" />
             </LinearLayout>
 

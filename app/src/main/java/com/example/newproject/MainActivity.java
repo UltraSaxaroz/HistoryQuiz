@@ -1,16 +1,19 @@
 package com.example.newproject;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         setContentView(R.layout.activity_main);
 
         // Read from the database

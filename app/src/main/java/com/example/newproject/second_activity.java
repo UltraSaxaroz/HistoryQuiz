@@ -8,8 +8,12 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextPaint;
+import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,16 +28,23 @@ import com.google.firebase.database.ValueEventListener;
 public class second_activity extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://history-quiz-5eb17-default-rtdb.firebaseio.com/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_second);
 
         Button btn;
         btn = findViewById(R.id.go_back);
         btn.setOnClickListener(new View.OnClickListener() {
-            @Override    public void onClick(View view) {
-                startActivity(new Intent(second_activity.this, MainActivity.class));    }
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(second_activity.this, MainActivity.class));
+            }
         });
 
         TextView textView = (TextView) findViewById(R.id.insta);
@@ -68,63 +79,86 @@ public class second_activity extends AppCompatActivity {
         textViewc.getPaint().setShader(textShader);
         textView.getPaint().setShader(textShader);
 
-        final EditText email = findViewById(R.id.mail);
-        final EditText fullname = findViewById(R.id.name);
-        final EditText password = findViewById(R.id.password);
-        final EditText repeatpass = findViewById(R.id.repeatpassword);
-        final Button registerBtn = findViewById(R.id.auth);
+    final EditText email = findViewById(R.id.mail);
+    final EditText fullname = findViewById(R.id.name);
+    final EditText password = findViewById(R.id.password);
+    final EditText repeatpass = findViewById(R.id.repeatpassword);
+    final Button registerBtn = findViewById(R.id.auth);
+
+//        private boolean validateEmail() {
+//            String emailInput = email.getEditableText().toString().trim();
+//
+//            if (emailInput.isEmpty()) {
+//                email.setError("Field can't be empty");
+//                return false;
+//            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+//                email.setError("Please enter a valid email");
+//                return false;
+//            }else{
+//                email.setError(null);
+//                return true;
+//            }
+//        }
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        @Override
+        public void onClick(View v) {
 
-                // get data
-                final String fullnameTxt = fullname.getText().toString();
-                final String emailTxt = email.getText().toString();
-                final String passwordTxt = password.getText().toString();
-                final String repeatpassTxt = repeatpass.getText().toString();
+            // get data
+            final String fullnameTxt = fullname.getText().toString();
+            final String emailTxt = email.getText().toString();
+            final String passwordTxt = password.getText().toString();
+            final String repeatpassTxt = repeatpass.getText().toString();
+            String emailInput = email.getEditableText().toString().trim();
 
-                //check if user fill all the fields before sending data to firebase
-                if(fullnameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()){
-                    Toast.makeText(second_activity.this, "Please fill all fields" ,Toast.LENGTH_SHORT).show();
-                }
-
-                // check if passwords are matching with each other
-                else if(!passwordTxt.equals(repeatpassTxt)){
-                    Toast.makeText(second_activity.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
-                }
-
-                else{
-
-                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            // check if mail is not registered before
-
-                            if(snapshot.hasChild(emailTxt)){
-                                Toast.makeText(second_activity.this, "E-mail is already registered", Toast.LENGTH_SHORT).show();
-                            }
-                            else{
-                                // sending data to firebase
-                                // we are using email as unique identity of every user
-                                databaseReference.child("users").child(emailTxt).child("fullname").setValue(fullnameTxt);
-                                databaseReference.child("users").child(emailTxt).child("email").setValue(emailTxt);
-                                databaseReference.child("users").child(emailTxt).child("password").setValue(passwordTxt);
-
-                                Toast.makeText(second_activity.this, "User registered succesfully", Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-                }
+            //check if user fill all the fields before sending data to firebase
+            if (fullnameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()) {
+                Toast.makeText(second_activity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             }
-        });
 
-    }
+            else if (emailInput.isEmpty()) {
+                email.setError("Field can't be empty");
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+                email.setError("Please enter a valid email");
+            }else{
+                email.setError(null);
+            }
+
+
+            // check if passwords are matching with each other
+            if (!passwordTxt.equals(repeatpassTxt)) {
+                Toast.makeText(second_activity.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
+            } else {
+
+                databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        // check if mail is not registered before
+
+                        if (snapshot.hasChild(emailTxt)) {
+                            Toast.makeText(second_activity.this, "E-mail is already registered", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // sending data to firebase
+                            // we are using email as unique identity of every user
+                            databaseReference.child("users").child(emailTxt).child("fullname").setValue(fullnameTxt);
+                            databaseReference.child("users").child(emailTxt).child("email").setValue(emailTxt);
+                            databaseReference.child("users").child(emailTxt).child("password").setValue(passwordTxt);
+
+                            Toast.makeText(second_activity.this, "User registered succesfully", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        }
+    });
+
+
+}
 }
