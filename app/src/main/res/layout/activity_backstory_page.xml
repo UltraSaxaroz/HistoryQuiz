@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/backgroundGray"
     android:layout_height="match_parent"
-    tools:context=".MainPage"
+    android:background="@color/backgroundGray"
     android:padding="20dp"
-    >
+    tools:context=".MainPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ScrollView>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -27,8 +32,7 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="15dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
             <!-- android:layout_marginRight="95dp" -->
             <TextView
                 android:id="@+id/instab"
@@ -40,62 +44,67 @@
                 android:textAlignment="center"
                 android:textColor="@color/niceWhite"
                 android:textFontWeight="800"
-                android:textSize="20dp"
-                />
+                android:textSize="20dp" />
         </RelativeLayout>
     </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:ignore="MissingConstraints">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:minHeight="300dp"
-        android:layout_height="match_parent"
-        android:background="@mipmap/ww1_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="93dp">
 
-
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints">
-        <TextView
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/ww1_background"
+            android:minHeight="300dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="93dp"></RelativeLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WW1"
-            android:textFontWeight="800"
-            android:fontFamily="@font/jfsgjsfg"
-            android:textSize="24dp"
-            android:textColor="@color/niceWhite"
-            android:gravity="center"/>
-    </LinearLayout>
-    <ScrollView
-        android:id="@+id/ScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:fillViewport="true"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        tools:ignore="MissingConstraints">
-        <TextView
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jfsgjsfg"
+                android:gravity="center"
+                android:text="WW1"
+                android:textColor="@color/niceWhite"
+                android:textFontWeight="800"
+                android:textSize="24dp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/ScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/WW1_intro"
-            android:textFontWeight="600"
-            android:fontFamily="@font/jfsgjsfg"
-            android:textSize="20dp"
-            android:textColor="@color/niceWhite"
-            android:gravity="center"/>
+            android:fillViewport="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jfsgjsfg"
+                    android:gravity="center"
+                    android:text="@string/WW1_intro"
+                    android:textColor="@color/niceWhite"
+                    android:textFontWeight="600"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
-    </ScrollView>
-</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

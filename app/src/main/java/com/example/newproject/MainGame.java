@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainGame extends AppCompatActivity implements View.OnClickListener{
+public class MainGame extends AppCompatActivity implements View.OnClickListener {
 
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -29,12 +29,11 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
     String selectedAnswer = "";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_game);
 
         totalQuestionsTextView = findViewById(R.id.total_question);
@@ -51,7 +50,7 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
         ansD.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions : "+totalQuestion);
+        totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
         loadNewQuestion();
 
@@ -67,14 +66,20 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
         ansD.setBackgroundColor(Color.WHITE);
 
         Button clickedButton = (Button) view;
-        if(clickedButton.getId()==R.id.submit_btn){
-            if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
+        if (clickedButton.getId() == R.id.submit_btn) {
+            if (selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])) {
                 score++;
+                clickedButton.setBackgroundColor(Color.GREEN);
+                totalQuestionsTextView.setText("");
+            } else {
+                clickedButton.setBackgroundColor(Color.RED);
+                totalQuestionsTextView.setTextColor(Color.GREEN);
+                totalQuestionsTextView.setText("Правильный ответ: " + QuestionAnswer.correctAnswers[currentQuestionIndex]);
             }
             currentQuestionIndex++;
             loadNewQuestion();
 
-        }else{
+        } else {
             selectedAnswer = clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.MAGENTA);
 
@@ -82,9 +87,9 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
         }
     }
 
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
-        if(currentQuestionIndex == totalQuestion) {
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
@@ -96,29 +101,31 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener{
         ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
 
     }
-    void finishQuiz(){
+
+    void finishQuiz() {
         String passStatus = "";
-        if(score > totalQuestion * 0.60){
+        if (score > totalQuestion * 0.60) {
             passStatus = "Passed";
-        }else{
+        } else {
             passStatus = "Failed";
         }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is "+ score +"out of "+totalQuestion)
+                .setMessage("Score is " + score + " out of " + totalQuestion)
                 .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
                 .setNegativeButton("Home", (dialogInterface, i) -> goHome())
                 .setCancelable(false)
                 .show();
     }
 
-    void restartQuiz(){
+    void restartQuiz() {
         score = 0;
         currentQuestionIndex = 0;
         loadNewQuestion();
     }
-    void goHome(){
+
+    void goHome() {
         startActivity(new Intent(MainGame.this, MainPage.class));
     }
 }

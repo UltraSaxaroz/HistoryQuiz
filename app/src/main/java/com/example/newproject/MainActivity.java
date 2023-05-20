@@ -35,13 +35,14 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://history-quiz-5eb17-default-rtdb.firebaseio.com/");
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         setContentView(R.layout.activity_main);
@@ -61,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
 
-
             public void onClick(View view) {
                 final String mailTxt = mail.getText().toString();
                 final String passwordTxt = password.getText().toString();
@@ -70,32 +70,29 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "AFDGHADFH", Toast.LENGTH_SHORT).show();
 
 
-                if(mailTxt.isEmpty() || passwordTxt.isEmpty()){
+                if (mailTxt.isEmpty() || passwordTxt.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter your mail or password", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
 
                     databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             // check if mobile/phone is exist in firebase database
-                            if(snapshot.hasChild(mailTxt)){
+                            if (snapshot.hasChild(mailTxt)) {
 
                                 final String getPassword = snapshot.child(mailTxt).child("password").getValue(String.class);
 
-                                if(getPassword.equals(passwordTxt)){
+                                if (getPassword.equals(passwordTxt)) {
                                     Toast.makeText(MainActivity.this, "Succesfully logged in", Toast.LENGTH_SHORT).show();
 
                                     // open mainactivity on success
                                     startActivity(new Intent(MainActivity.this, MainPage.class));
                                     finish();
-                                }
-                                else{
+                                } else {
                                     Toast.makeText(MainActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                                 }
-                            }
-                            else{
+                            } else {
                                 Toast.makeText(MainActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                             }
                         }
