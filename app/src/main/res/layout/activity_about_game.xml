@@ -1,0 +1,73 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/niceWhite"
+    tools:context=".MainActivity"
+    android:padding="24dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/semiTransparent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal">
+
+            <!-- android:layout_marginRight="95dp" -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Timeless-Trivia"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundGray"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Об игре"
+            android:textFontWeight="900"
+            android:textColor="@color/backgroundGray"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textFontWeight="600"
+            android:textColor="@color/backgroundGray"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:text="Игра имеет цель возвратить людям стремление знать и учить историю, но в развлекательной форме. Так, люди проходя один этап, даже если ответят на вопрос неправильно, то в конце концов запомнят правильный ответ.
+Приложение представляет из себя простую квиз игру, которая поможет скоротать время с пользой.
+Данный проект имеет лишь учебный характер, чтобы построить понимание как работает Android разработка."/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

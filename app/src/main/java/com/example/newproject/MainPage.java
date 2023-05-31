@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.StartupTime;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -63,6 +64,14 @@ public class MainPage extends AppCompatActivity {
                 startActivity(new Intent(MainPage.this, MainGame.class));
             }
         });
+        final Button btn4 = findViewById(R.id.aboutGame);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainPage.this, AboutGame.class));
+            }
+        });
+
 
 /*
        TextView textView = (TextView) findViewById(R.id.insta);

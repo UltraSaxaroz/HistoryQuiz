@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundGray"
+    android:background="@color/niceWhite"
     tools:context=".MainPage"
     android:padding="24dp">
 
@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:text="Timeless-Trivia"
                 android:textAlignment="center"
-                android:textColor="@color/niceWhite"
+                android:textColor="@color/backgroundGray"
                 android:textFontWeight="800"
                 android:textSize="20dp" />
         </RelativeLayout>
@@ -85,9 +85,10 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="#982424"
+                android:backgroundTint="#025771"
                 android:fontFamily="@font/montserrat"
                 android:text="Об игре"
+                android:id="@+id/aboutGame"
                 android:textAllCaps="false"
                 android:textColor="#FFFDFA"
                 android:textFontWeight="400"
@@ -98,7 +99,7 @@
                 android:id="@+id/backstoryPage"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="#EDDCC4"
+                android:backgroundTint="#BF7E21"
                 android:fontFamily="@font/montserrat"
                 android:text="Предыстория"
                 android:textAllCaps="false"
@@ -111,7 +112,7 @@
                 android:id="@+id/startButton"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:backgroundTint="#560E0D0D"
+                android:backgroundTint="#151515"
                 android:fontFamily="@font/jfsgjsfg"
                 android:text="Начать игру"
                 android:textAllCaps="false"

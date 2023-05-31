@@ -81,7 +81,7 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener 
 
         } else {
             selectedAnswer = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.MAGENTA);
+            clickedButton.setBackgroundColor(Color.YELLOW);
 
 
         }
@@ -105,16 +105,16 @@ public class MainGame extends AppCompatActivity implements View.OnClickListener 
     void finishQuiz() {
         String passStatus = "";
         if (score > totalQuestion * 0.60) {
-            passStatus = "Passed";
+            passStatus = "Победа!";
         } else {
-            passStatus = "Failed";
+            passStatus = "Вы проиграли";
         }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is " + score + " out of " + totalQuestion)
-                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> goHome())
+                .setMessage("Счёт " + score + " из " + totalQuestion)
+                .setPositiveButton("Рестарт", (dialogInterface, i) -> restartQuiz())
+                .setNegativeButton("Домой", (dialogInterface, i) -> goHome())
                 .setCancelable(false)
                 .show();
     }
