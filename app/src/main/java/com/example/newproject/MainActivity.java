@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 final String passwordTxt = password.getText().toString();
                 System.out.println(mailTxt + " " + passwordTxt);
 
-                Toast.makeText(MainActivity.this, "AFDGHADFH", Toast.LENGTH_SHORT).show();
-
 
                 if (mailTxt.isEmpty() || passwordTxt.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter your mail or password", Toast.LENGTH_SHORT).show();

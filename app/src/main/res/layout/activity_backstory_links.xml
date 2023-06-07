@@ -1,0 +1,82 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/niceWhite"
+    tools:context=".MainActivity"
+    android:padding="24dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/semiTransparent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal">
+
+            <!-- android:layout_marginRight="95dp" -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Timeless-Trivia"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundGray"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/backgroundGray"
+        android:textSize="14dp"
+        android:text="Выберите историю:"
+        />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/backgroundGray"
+        android:id="@+id/button1"
+        android:text="WW1"/>
+    <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+        android:backgroundTint="@color/backgroundGray"
+        android:id="@+id/button2"
+            android:text="WW2"/>
+    <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+        android:text="Napoleon"
+        android:backgroundTint="@color/backgroundGray"
+        android:id="@+id/button3"
+        android:textAllCaps="false"/>
+
+
+
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

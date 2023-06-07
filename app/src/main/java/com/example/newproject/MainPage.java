@@ -43,25 +43,20 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
 
-        final Button btn = findViewById(R.id.profileBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View view) {
-                                       startActivity(new Intent(MainPage.this, ProfilePage.class));
-                                   }
-                               });
+
+
         final Button btn2 = findViewById(R.id.backstoryPage);
         btn2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, backstoryPage.class));
+                startActivity(new Intent(MainPage.this, BackstoryLinks.class));
             }
         });
         final Button btn3 = findViewById(R.id.startButton);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, MainGame.class));
+                startActivity(new Intent(MainPage.this, GameLinks.class));
             }
         });
         final Button btn4 = findViewById(R.id.aboutGame);
@@ -71,6 +66,7 @@ public class MainPage extends AppCompatActivity {
                 startActivity(new Intent(MainPage.this, AboutGame.class));
             }
         });
+
 
 
 /*

@@ -121,19 +121,6 @@
                 android:textSize="20dp"
                 app:cornerRadius="30dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/profileBtn"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:backgroundTint="#F3DFC3"
-                android:fontFamily="@font/montserrat"
-                android:text="Профиль"
-                android:textAllCaps="false"
-                android:textColor="@color/backgroundGray"
-                android:textFontWeight="700"
-                android:textSize="17dp"
-                app:cornerRadius="30dp" />
-
         </LinearLayout>
 
     </LinearLayout>
