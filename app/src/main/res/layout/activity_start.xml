@@ -86,7 +86,7 @@
             android:id="@+id/option1Layout"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_vertical"
             android:background="@drawable/round_black_white50_10">
 
