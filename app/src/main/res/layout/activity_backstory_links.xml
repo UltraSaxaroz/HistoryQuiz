@@ -71,7 +71,7 @@
     <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-        android:text="Napoleon"
+        android:text="Artsakh War"
         android:backgroundTint="@color/backgroundGray"
         android:textColor="#FFFFFF"
         android:id="@+id/button3"

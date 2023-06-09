@@ -12,7 +12,7 @@ public class GameLinks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_backstory_links);
+        setContentView(R.layout.activity_game_links);
 
 
         final Button button1 = findViewById(R.id.button1);
@@ -29,6 +29,12 @@ public class GameLinks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(GameLinks.this, StartActivity2.class));
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GameLinks.this, StartActivity3.class));
             }
         });
     }

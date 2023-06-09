@@ -31,5 +31,11 @@ public class BackstoryLinks extends AppCompatActivity {
                 startActivity(new Intent(BackstoryLinks.this, backstoryPage2.class));
             }
         });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BackstoryLinks.this, backstoryPage3.class));
+            }
+        });
     }
 }

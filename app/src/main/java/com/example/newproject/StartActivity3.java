@@ -28,7 +28,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-public class StartActivity2 extends AppCompatActivity {
+public class StartActivity3 extends AppCompatActivity {
 
     // creating questions list
     private final List<QuestionsList> questionsLists = new ArrayList<>();
@@ -58,7 +58,7 @@ public class StartActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start2);
+        setContentView(R.layout.activity_start3);
 
         quizTimer = findViewById(R.id.quizTimer);
 
@@ -84,7 +84,7 @@ public class StartActivity2 extends AppCompatActivity {
         final AppCompatButton nextBtn = findViewById(R.id.nextQuestionBtn);
 
         // show instructions dialog
-        InstructionsDialog instructionsDialog = new InstructionsDialog(StartActivity2.this);
+        InstructionsDialog instructionsDialog = new InstructionsDialog(StartActivity3.this);
         instructionsDialog.setCancelable(false);
         instructionsDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         instructionsDialog.show();
@@ -96,7 +96,7 @@ public class StartActivity2 extends AppCompatActivity {
 
                 final int getQuizTime = Integer.parseInt(Objects.requireNonNull(snapshot.child("time").getValue(String.class)));
 
-                for(DataSnapshot questions : snapshot.child("WW2").getChildren()){
+                for(DataSnapshot questions : snapshot.child("Artsakh").getChildren()){
                     String getQuestion = questions.child("question").getValue(String.class);
                     String getOption1 = questions.child("option1").getValue(String.class);
                     String getOption2 = questions.child("option2").getValue(String.class);
@@ -123,7 +123,7 @@ public class StartActivity2 extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(StartActivity2.this, "Failed to get data from FireBase", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StartActivity3.this, "Failed to get data from FireBase", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -194,7 +194,7 @@ public class StartActivity2 extends AppCompatActivity {
                     }
                 }
                 else{
-                    Toast.makeText(StartActivity2.this, "Please select an Option", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StartActivity3.this, "Please select an Option", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -204,7 +204,7 @@ public class StartActivity2 extends AppCompatActivity {
     private void finishQuiz(){
 
         // Creating intent to open QuizResult activity
-        Intent intent = new Intent(StartActivity2.this, QuizResult.class);
+        Intent intent = new Intent(StartActivity3.this, QuizResult.class);
 
         // Creating bundle to pass quizQuestionsLists
         Bundle bundle = new Bundle();
@@ -289,16 +289,3 @@ public class StartActivity2 extends AppCompatActivity {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
