@@ -89,16 +89,16 @@
                 android:layout_height="50dp"
                 android:gravity="center">
 
+
                 <TextView
                     android:layout_width="130dp"
                     android:layout_height="50dp"
                     android:fontFamily="@font/montserrat"
                     android:gravity="center"
-                    android:text="E-Mail:"
+                    android:text="Username:"
                     android:textAlignment="center"
                     android:textColor="@color/niceWhite"
                     android:textSize="20dp" />
-
 
                 <EditText
                     android:layout_width="150dp"

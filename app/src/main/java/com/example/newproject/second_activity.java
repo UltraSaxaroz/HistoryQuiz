@@ -10,6 +10,7 @@ import android.graphics.Shader;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -85,20 +87,7 @@ public class second_activity extends AppCompatActivity {
     final EditText repeatpass = findViewById(R.id.repeatpassword);
     final Button registerBtn = findViewById(R.id.auth);
 
-//        private boolean validateEmail() {
-//            String emailInput = email.getEditableText().toString().trim();
-//
-//            if (emailInput.isEmpty()) {
-//                email.setError("Field can't be empty");
-//                return false;
-//            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
-//                email.setError("Please enter a valid email");
-//                return false;
-//            }else{
-//                email.setError(null);
-//                return true;
-//            }
-//        }
+
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -111,6 +100,7 @@ public class second_activity extends AppCompatActivity {
             final String repeatpassTxt = repeatpass.getText().toString();
             String emailInput = email.getEditableText().toString().trim();
 
+
             //check if user fill all the fields before sending data to firebase
             if (fullnameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()) {
                 Toast.makeText(second_activity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
@@ -118,11 +108,12 @@ public class second_activity extends AppCompatActivity {
 
             else if (emailInput.isEmpty()) {
                 email.setError("Field can't be empty");
-            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
-                email.setError("Please enter a valid email");
-            }else{
-                email.setError(null);
             }
+//            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+//                email.setError("Please enter a valid email");
+//            }else{
+//                email.setError(null);
+//            }
 
 
             // check if passwords are matching with each other
@@ -134,10 +125,11 @@ public class second_activity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        // check if mail is not registered before
 
+
+                        // check if mail is not registered before
                         if (snapshot.hasChild(emailTxt)) {
-                            Toast.makeText(second_activity.this, "E-mail is already registered", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(second_activity.this, "Username is already registered", Toast.LENGTH_SHORT).show();
                         } else {
                             // sending data to firebase
                             // we are using email as unique identity of every user
