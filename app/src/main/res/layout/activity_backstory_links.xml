@@ -52,18 +52,20 @@
         android:fontFamily="@font/montserrat"
         android:textColor="@color/backgroundGray"
         android:textSize="14dp"
-        android:text="Выберите историю:"
+        android:text="Выберите событие:"
         />
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/backgroundGray"
         android:id="@+id/button1"
+        android:textColor="#FFFFFF"
         android:text="WW1"/>
     <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
         android:backgroundTint="@color/backgroundGray"
+        android:textColor="#FFFFFF"
         android:id="@+id/button2"
             android:text="WW2"/>
     <Button
@@ -71,6 +73,7 @@
             android:layout_height="wrap_content"
         android:text="Napoleon"
         android:backgroundTint="@color/backgroundGray"
+        android:textColor="#FFFFFF"
         android:id="@+id/button3"
         android:textAllCaps="false"/>
 
